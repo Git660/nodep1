@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="../stylesheets/style.css">
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.0.0/fonts/remixicon.css" rel="stylesheet">
+
+</head>
+
+<body>
+  <div id="main">
+    <div id="left">
+      <h2 id="ttl">Sasta vs Code</h2>
+      <div class="nav">
+        <h3>Folder</h3>
+        <div class="icon">
+          <h5><i id="foldericn" class="ri-folder-3-line"></i></h5>
+          <h5><i id="fileicn" class="ri-file-line"></i></h5>
+        <h5><i class="ri-restart-line"></i></h5>
+
+        </div>
+
+
+      </div>
+      <div id="file" class="form">
+        <form action="/filename">
+
+          <input type="text" placeholder="eneter filename" name="file">
+        </form>
+        
+      </div>
+      <div id="folder" class="form">
+        <form action="/folder">
+          <input type="text" placeholder="eneter folderename" name="folder">
+        </form>
+      </div>
+      <div class="icon">
+        <h5><i  class="ri-file-line"></i></h5>
+        index.html
+      </div>
+      <div class="icon">
+        <h5><i  class="ri-folder-3-line"></i></h5>
+        somefolder
+
+      </div>
+    </div>
+    <div id="right">
+
+    </div>
+
+  </div>
+<script>
+  function gayab(){
+    document.querySelectorAll("form").forEach(function(val) {
+      val.style.display="none"
+      
+    });
+   
+   
+  }
+  gayab()
+document.querySelector("#fileicn").addEventListener("click",function(){
+  gayab()
+  
+  document.querySelector("#file form").style.display="initial"
+})
+document.querySelector("#foldericn").addEventListener("click",function(){
+  gayab()
+
+  
+  document.querySelector("#folder form").style.display="initial"
+})
+window.addEventListener("keydown",function(p){
+  if(p.keyCode===27){
+    gayab()
+    
+
+    document.querySelectorAll("input").forEach(function(elem){
+    elem.value=" ";
+  })
+
+  }
+  
+  
+})
+</script>
+</body>
+
+</html>
